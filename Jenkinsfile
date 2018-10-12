@@ -34,7 +34,7 @@ pipeline {
             steps{
                 script {
                     def userInput = input(id: 'confirm', message: 'Are you Sure to Deploy Terraform?',
-                    parameters: [ [$class: 'BooleanParameterDefination', defaultValue: false,
+                    parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false,
                     description: 'Apply Terraform', name: 'confirm']])
                 }
             }
