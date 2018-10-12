@@ -39,5 +39,10 @@ pipeline {
                 }
             }
         }
+        stage('Terraform apply'){
+            steps {
+                sh 'terraform apply /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
+            }
+        }
     }
 }
