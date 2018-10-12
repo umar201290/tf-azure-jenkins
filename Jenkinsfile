@@ -30,5 +30,14 @@ pipeline {
                 sh 'terraform plan /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
             }
         }
+        stage ('Approval Required'){
+            steps{
+                script {
+                    def userInput = input(id: 'confirm', message: 'Are you Sure to Deploy Terraform?',
+                    parameters: [ [$class: 'BooleanParameterDefination', defaultValue: false,
+                    description: 'Apply Terraform', name: 'confirm']])
+                }
+            }
+        }
     }
 }
