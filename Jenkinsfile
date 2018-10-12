@@ -25,5 +25,10 @@ pipeline {
                 sh 'terraform init /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
             }
         }
+        stage('Terraform plan'){
+            steps {
+                sh 'terraform plan /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
+            }
+        }
     }
 }
