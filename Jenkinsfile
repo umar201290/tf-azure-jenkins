@@ -20,5 +20,10 @@ pipeline {
                 sh 'sudo cp /home/azureuser/provider.tf /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
             }
         }
+        stage('Terraform init'){
+            steps {
+                sh 'terraform init /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
+            }
+        }
     }
 }
