@@ -15,5 +15,10 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Getting Credentials'){
+            steps {
+                sh 'sudo cp /home/azureuser/provider.tf /var/lib/jenkins/workspace/Terraform-Deployment-Pipeline/'
+            }
+        }
     }
 }
